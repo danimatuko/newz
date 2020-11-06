@@ -1,13 +1,20 @@
 nav {
     font-weight: bold;
-    margin-bottom: 4rem;
 
-    .container {
-        max-width: none;
-        width: 90%;
+    .nav-wrapper {
+        .container {
+            max-width: none;
+            width: 90%;
+        }
+
+        li a {
+            font-size: 1.3rem;
+        }
 
         .brand-logo {
             font-size: 3.1rem;
         }
     }
+
+
 }

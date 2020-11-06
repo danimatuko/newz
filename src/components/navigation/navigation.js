@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <nav className="blue-grey lighten-5 ">
+    <nav className="grey lighten-5 ">
       <div class="nav-wrapper">
         <div className="container">
           <Router>
