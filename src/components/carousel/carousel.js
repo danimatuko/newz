@@ -33,7 +33,7 @@ class Carousel extends Component {
   };
 
   componentDidMount() {
-    const articles = this.geTtopArticles();
+   // const articles = this.geTtopArticles();
     // this.buildCarouselItems(articles);
   }
 
@@ -41,15 +41,6 @@ class Carousel extends Component {
     return (
       <div class="carousel carousel-slider">
         <CarouselItem />
-        <a class="carousel-item" href="#two!">
-          <img src="https://lorempixel.com/800/400/food/2" />
-        </a>
-        <a class="carousel-item" href="#three!">
-          <img src="https://lorempixel.com/800/400/food/3" />
-        </a>
-        <a class="carousel-item" href="#four!">
-          <img src="https://lorempixel.com/800/400/food/4" />
-        </a>
       </div>
     );
   }
