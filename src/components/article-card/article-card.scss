@@ -1,6 +1,22 @@
 .card-wrapper {
+    .card {
+        h3.card-title {
+            font-weight: normal;
+            padding: 1rem;
+            margin: 0;
+        }
 
-    .card-image img {
-        max-height: 140px;
+        .card-image img {
+            max-height: 140px;
+        }
+
+        .readMore{
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+    }
+
+    .card.medium {
+        height: 350px;
     }
 }

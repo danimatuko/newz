@@ -7,17 +7,21 @@ const ArticaleCard = (props) => {
   const { title, description, publishedAt, url, urlToImage } = props;
   return (
     <div class="col s12 m6 l3  card-wrapper">
-      <div class="card right-align medium ">
+      <div class="card right-align medium">
         <div class="card-image">
           <img src={urlToImage} alt="" />
         </div>
-        <span class="card-title">{title}</span>
-
+        <h3 class="card-title">{title}</h3>
         {/* <div class="card-content">
           <p>{description}</p>
         </div> */}
         <div class="card-action">
-          <a href={url}>This is a link</a>
+          <a
+            href={url}
+            class="blue-grey darken-4 waves-effect waves-light btn-small readMore"
+          >
+            קרא עוד
+          </a>
         </div>
       </div>
     </div>
