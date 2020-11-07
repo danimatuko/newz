@@ -5,61 +5,64 @@ import CarouselItem from "../carousel-item/carousel-item";
 class Carousel extends Component {
   constructor() {
     super();
-    // Material Initialization
+    // Material Initialization for for carousel
     document.addEventListener("DOMContentLoaded", function () {
       this.carousel = document.querySelector(".carousel");
       this.instacne = M.Carousel.init(this.carousel, {
         indicators: true,
       });
     });
+
+    this.state = {
+      topArticles: [],
+    };
   }
 
+  initCarousel = () => {};
+
   // get top headings data
-  geTtopArticles = () => {
+  getTopArticles = () => {
     fetch(
-      "http://newsapi.org/v2/top-headlines?country=il&apiKey=798fae5901184ccf8e4880a3283c562d"
+      `http://newsapi.org/v2/top-headlines?country=il&apiKey=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
       .then((res) => res.articles)
-      .then((res) => res)
-      .then((res) => this.buildCarouselItems(res))
+      .then((res) => this.setState({ topArticles: res }))
       .catch(() => console.log("somthing faild"));
   };
 
-  // build carousel items
-  buildCarouselItems = (articles) => {
-    console.log("buildCarouselItems", articles);
-    // topArticles.map((article) => article);
-  };
-
   componentDidMount() {
-   // const articles = this.geTtopArticles();
-    // this.buildCarouselItems(articles);
+    this.getTopArticles();
   }
 
   render() {
     return (
-      <div class="carousel carousel-slider">
-        <CarouselItem />
+      <div className="carousel carousel-slider">
+        <CarouselItem/>
+        {/* {this.state.topArticles
+          // filter articles with empty decription
+          .filter(
+            (article, index) =>
+              article.description !== "0" && article.description !== ""
+          )
+          // filter to show 4 results
+          // .filter((article, index) => index < 4)
+          .map(({ title, description, publishedAt, url, urlToImage }) => (
+            <CarouselItem
+              title={title}
+              description={description}
+              publishedAt={publishedAt}
+              url={url}
+              urlToImage={urlToImage}
+              key={publishedAt}
+            />
+          ))} */}
       </div>
     );
   }
 }
 
 export default Carousel;
-
-// Top sports headlines from Israel
-
-// fetch(
-//   `http://newsapi.org/v2/top-headlines?country=il&category=sports&apiKey=${process.env.REACT_APP_API_KEY}`
-// )
-//   .then((res) => res.json())
-//   .then((res) => console.log(res))
-//   .catch(console.log("noob"));
-
-//  fetch(
-//   "http://newsapi.org/v2/top-headlines?country=il&category=sports&apiKey=798fae5901184ccf8e4880a3283c562d"
-//  ).then((res) => console.log(res.json()));
 
 /* slide */
 

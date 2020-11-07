@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 const Navigation = () => {
   return (
     <nav className="grey lighten-5 ">
-      <div class="nav-wrapper">
+      <div className="nav-wrapper">
         <div className="container">
-          <Link to="/" class="brand-logo">
+          <Link to="/" className="brand-logo">
             <img src={Logo} alt="site logo" />
           </Link>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
               <Link className="blue-grey-text darken-4" to="sass.html">
                 עסקים

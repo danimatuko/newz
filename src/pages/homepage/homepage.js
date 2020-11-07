@@ -8,7 +8,6 @@ class Homepage extends Component {
       <div className="homepage">
         <Carousel />
         <CategoryPreview />
-     
       </div>
     );
   }

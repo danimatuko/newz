@@ -26,12 +26,13 @@ class CategoryPreview extends Component {
       <div className="category-preview">
         <div className="container">
           <h2 style={{ textAlign: "right" }}>ספורט</h2>
-          <div class="row">
+          <div className="row">
             {this.state.articles
-            // filter articles with empty decription
+              // filter articles with empty decription
               .filter(
                 (article, index) =>
-                  article.description !== "0" && article.description !== "")
+                  article.description !== "0" && article.description !== ""
+              )
               // filter to show 4 results
               .filter((article, index) => index < 4)
               .map(({ title, description, publishedAt, url, urlToImage }) => (
@@ -41,6 +42,7 @@ class CategoryPreview extends Component {
                   publishedAt={publishedAt}
                   url={url}
                   urlToImage={urlToImage}
+                  key={publishedAt}
                 />
               ))}
           </div>
@@ -51,6 +53,3 @@ class CategoryPreview extends Component {
 }
 
 export default CategoryPreview;
-
-
-
