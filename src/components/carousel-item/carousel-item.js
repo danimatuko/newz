@@ -2,11 +2,12 @@ import React from "react";
 import "./carousel-item.scss";
 
 const CarouselItem = (props) => {
-  const { url, urlToImage } = props;
+  const { url, urlToImage ,title } = props;
   return (
-    <a className="carousel-item" href={url}>
-      <img src={urlToImage} alt="" />
-    </a>
+    <a href={url}>
+    <div className="img" style={{ backgroundImage: `url(${ urlToImage })` }}></div>
+    <p className="title">{title}</p>
+  </a>
   );
 };
 
