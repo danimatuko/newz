@@ -16,9 +16,11 @@ class CategoryPreview extends Component {
     )
       .then((res) => res.json())
       .then((res) => res.articles)
-      .then((res) => this.setState({ articles: res }))
-      .then(this.generateArticleCards)
-      .catch((err) => console.log(err));
+      .then((res) => {
+        this.setState({ articles: res });
+        console.log(this.state.articles);
+      })
+      .catch((err) => console.log("error in fetch sports data", err));
   }
 
   render() {
