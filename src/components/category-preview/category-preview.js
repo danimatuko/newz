@@ -10,7 +10,7 @@ class CategoryPreview extends Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     fetch(
       `http://newsapi.org/v2/top-headlines?country=il&category=sports&apiKey=${process.env.REACT_APP_API_KEY}`
     )
@@ -30,10 +30,12 @@ class CategoryPreview extends Component {
           <h2 style={{ textAlign: "right" }}>ספורט</h2>
           <div className="row">
             {this.state.articles
-              // filter articles with empty decription
+              // filter articles with empty decription or empty image
               .filter(
                 (article, index) =>
-                  article.description !== "0" && article.description !== ""
+                  article.description !== "0" &&
+                  article.description !== "" &&
+                  article.urlToImage != null
               )
               // filter to show 4 results
               .filter((article, index) => index < 4)

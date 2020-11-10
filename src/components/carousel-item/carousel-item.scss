@@ -1,7 +1,35 @@
-.carousel .carousel-item {
-    visibility: visible;
+.slide-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+
+    }
+
+    a {
+        z-index: 2;
+
+        p.title {
+            margin: auto;
+            width: 75%;
+            color: white;
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    }
 
 }
-
-
-

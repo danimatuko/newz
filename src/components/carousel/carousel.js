@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-//import M from "materialize-css";
-
 // import Swiper core and required components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
@@ -20,8 +18,8 @@ class Carousel extends Component {
     };
   }
 
-  //  get top headings data
-  getTopArticles = () => {
+  componentWillMount() {
+    //  get top headings data
     fetch(
       `http://newsapi.org/v2/top-headlines?country=il&apiKey=${process.env.REACT_APP_API_KEY}`
     )
@@ -33,17 +31,12 @@ class Carousel extends Component {
       })
       .then(() => this.initCarousel())
       .catch((err) => console.log("somthing faild", err));
-  };
-
-  componentDidMount() {
-    this.getTopArticles();
   }
 
   render() {
     return (
       <Swiper
         loop={true}
-        //  spaceBetween={50}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
@@ -59,6 +52,7 @@ class Carousel extends Component {
             (article, index) =>
               article.description !== "0" &&
               article.description !== "" &&
+              article.description != null &&
               article.urlToImage != null
           )
           // filter to show 4 results

@@ -1,19 +1,23 @@
 .swiper-container {
     width: 100vw;
     height: 400px;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: white;
+        background-color: rgba(17, 10, 10, 0.596);
+        padding: 3rem;
+        font-weight: bold;
+    }
+
+    .swiper-button-next {
+        right: 30px;
+    }
+
+    .swiper-button-prev {
+        left: 30px;
+    }
 }
 
-.swiper-slide,
-.img {
-    width: 100% !important;
-    height: 100% !important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  
-}
 
-// .swiper-button-next,
-// .swiper-button-prev {
-//     color: black !important;
-// }
+
