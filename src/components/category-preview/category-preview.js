@@ -9,7 +9,7 @@ class CategoryPreview extends Component {
     };
   }
 
-  componentWillMount() {
+  getTopHeadingsByCategory = () => {
     fetch(
       `http://newsapi.org/v2/top-headlines?country=il&category=${this.props.categoryName}&apiKey=${process.env.REACT_APP_API_KEY}`
     )
@@ -17,10 +17,12 @@ class CategoryPreview extends Component {
       .then((res) => res.articles)
       .then((res) => {
         this.setState({ articles: res });
-        // console.log(this.state.articles);
-        // console.log("props",this.props.categoryName);
       })
       .catch((err) => console.log("category-preview -> error in fetch", err));
+  };
+
+  componentWillMount() {
+    this.getTopHeadingsByCategory();
   }
 
   render() {
@@ -30,14 +32,13 @@ class CategoryPreview extends Component {
           <h2 style={{ textAlign: "right" }}>{this.props.categoryName}</h2>
           <div className="row">
             {this.state.articles
-              // filter articles with empty decription or empty image
-              .filter(
+          /* IMPORTANT: sometimes the API returns objects with empty fields */
+          .filter(
                 (article, index) =>
                   article.description !== "0" &&
                   article.description !== "" &&
                   article.urlToImage != null
               )
-              // filter to show 4 results
               .filter((article, index) => index < 4)
               .map(({ title, description, publishedAt, url, urlToImage }) => (
                 <ArticaleCard

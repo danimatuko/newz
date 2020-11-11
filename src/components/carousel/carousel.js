@@ -1,12 +1,11 @@
 import React, { Component } from "react";
+import "./carousel.scss";
+import CarouselItem from "../../components/carousel-item/carousel-item";
 // import Swiper core and required components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
-import "./carousel.scss";
-import CarouselItem from "../../components/carousel-item/carousel-item";
-
-// install Swiper components
+// user imported Swiper components
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 class Carousel extends Component {
@@ -18,8 +17,7 @@ class Carousel extends Component {
     };
   }
 
-  componentWillMount() {
-    //  get top headings data
+  getTopHeadings = () => {
     fetch(
       `http://newsapi.org/v2/top-headlines?country=il&apiKey=${process.env.REACT_APP_API_KEY}`
     )
@@ -27,9 +25,12 @@ class Carousel extends Component {
       .then((res) => res.articles)
       .then((res) => {
         this.setState({ topArticles: res });
-     // console.log(this.state.topArticles);
       })
       .catch((err) => console.log("carousel -> error in fetch", err));
+  };
+
+  componentWillMount() {
+    this.getTopHeadings();
   }
 
   render() {
@@ -42,11 +43,9 @@ class Carousel extends Component {
         autoplay={{
           delay: 5000,
         }}
-        //   onSwiper={(swiper) => console.log(swiper)}
-        //  onSlideChange={() => console.log("slide change")}
       >
         {this.state.topArticles
-          // filter articles with empty decription or empty image
+          /* IMPORTANT: sometimes the API returns objects with empty fields */
           .filter(
             (article, index) =>
               article.description !== "0" &&
@@ -54,15 +53,10 @@ class Carousel extends Component {
               article.description != null &&
               article.urlToImage != null
           )
-          // filter to show 4 results
           .filter((article, index) => index < 4)
           .map(({ title, description, publishedAt, url, urlToImage }) => (
             <SwiperSlide key={publishedAt}>
-              <CarouselItem
-                title={title}
-                url={url}
-                urlToImage={urlToImage}
-              />
+              <CarouselItem title={title} url={url} urlToImage={urlToImage} />
             </SwiperSlide>
           ))}
       </Swiper>
