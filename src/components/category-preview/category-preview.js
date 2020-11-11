@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import ArticaleCard from "../article-card/articale-card";
 
 class CategoryPreview extends Component {
-  constructor() {
+  constructor(props) {
     super();
-
     this.state = {
       articles: [],
     };
@@ -12,22 +11,23 @@ class CategoryPreview extends Component {
 
   componentWillMount() {
     fetch(
-      `http://newsapi.org/v2/top-headlines?country=il&category=sports&apiKey=${process.env.REACT_APP_API_KEY}`
+      `http://newsapi.org/v2/top-headlines?country=il&category=${this.props.categoryName}&apiKey=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
       .then((res) => res.articles)
       .then((res) => {
         this.setState({ articles: res });
-        console.log(this.state.articles);
+        // console.log(this.state.articles);
+        // console.log("props",this.props.categoryName);
       })
-      .catch((err) => console.log("error in fetch sports data", err));
+      .catch((err) => console.log("category-preview -> error in fetch", err));
   }
 
   render() {
     return (
       <div className="category-preview">
         <div className="container">
-          <h2 style={{ textAlign: "right" }}>ספורט</h2>
+          <h2 style={{ textAlign: "right" }}>{this.props.categoryName}</h2>
           <div className="row">
             {this.state.articles
               // filter articles with empty decription or empty image

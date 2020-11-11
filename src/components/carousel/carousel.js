@@ -27,10 +27,9 @@ class Carousel extends Component {
       .then((res) => res.articles)
       .then((res) => {
         this.setState({ topArticles: res });
-        console.log(this.state.topArticles);
+     // console.log(this.state.topArticles);
       })
-      .then(() => this.initCarousel())
-      .catch((err) => console.log("somthing faild", err));
+      .catch((err) => console.log("carousel -> error in fetch", err));
   }
 
   render() {
@@ -43,8 +42,8 @@ class Carousel extends Component {
         autoplay={{
           delay: 5000,
         }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        //   onSwiper={(swiper) => console.log(swiper)}
+        //  onSlideChange={() => console.log("slide change")}
       >
         {this.state.topArticles
           // filter articles with empty decription or empty image
@@ -58,8 +57,12 @@ class Carousel extends Component {
           // filter to show 4 results
           .filter((article, index) => index < 4)
           .map(({ title, description, publishedAt, url, urlToImage }) => (
-            <SwiperSlide>
-              <CarouselItem title={title} url={url} urlToImage={urlToImage} />
+            <SwiperSlide key={publishedAt}>
+              <CarouselItem
+                title={title}
+                url={url}
+                urlToImage={urlToImage}
+              />
             </SwiperSlide>
           ))}
       </Swiper>
