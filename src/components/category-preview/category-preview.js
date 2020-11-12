@@ -29,7 +29,7 @@ class CategoryPreview extends Component {
     return (
       <div className="category-preview">
         <div className="container">
-          <h2 style={{ textAlign: "right" }}>{this.props.categoryName}</h2>
+          <h2 style={{ textAlign: "right" }}>{this.props.hebrewName}</h2>
           <div className="row">
             {this.state.articles
           /* IMPORTANT: sometimes the API returns objects with empty fields */
