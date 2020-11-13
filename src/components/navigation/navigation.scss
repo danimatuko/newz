@@ -13,7 +13,40 @@ nav {
 
         .brand-logo {
             font-size: 3.1rem;
+
+            img {
+                width: 150px;
+            }
         }
+
+
+    }
+
+
+
+    @media screen and (min-width: 601px) and (max-width: 992px) {
+        .sidenav {
+            padding-top: 1rem;
+            width: 35%;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .sidenav {
+                padding-top: 1rem;
+                width: 60%;
+
+                .brand-logo-mobile {
+                    img {
+                        width: 120px;
+                    }
+                }
+            }
+        }
+
+
+
+
     }
 
 

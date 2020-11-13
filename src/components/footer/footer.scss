@@ -1,10 +1,14 @@
-.social-icons{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+footer.page-footer {
+    margin-top: 5rem;
 
+    .social-icons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
 
-    a{
-        margin-left: 1.5rem;
+        a {
+            margin-left: 1.5rem;
+        }
     }
+
 }

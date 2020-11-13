@@ -6,7 +6,7 @@ const Footer = () => {
     <footer class="page-footer blue-grey darken-4 right-align">
       <div class="container">
         <div class="row">
-          <div class="col l4 ">
+          <div class="col l4 m4 s6">
             <h5 class="white-text">עקבו אחרינו</h5>
             <div className="social-icons text-white">
               <a href="/" className="grey-text text-lighten-3">
@@ -20,7 +20,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div class="col l3">
+          <div class="col l3 m4 s6">
             <h5 class="white-text">קטגוריות</h5>
             <ul>
               {categoriesData.map(({ hebrewName }) => (
@@ -32,7 +32,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div class="col l4">
+          <div class="col l4 m4 s12">
             <h5 class="white-text">NEWZ</h5>
             <p class="grey-text text-lighten-4 ">
               כל החדשות הכתבות והעדכונים במקום אחד

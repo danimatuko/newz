@@ -1,38 +1,92 @@
-.slide-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+.swiper-container {
 
-    &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-
-    }
-
-    a {
-        z-index: 2;
+    .slide-wrapper {
         width: 100%;
         height: 100%;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
 
-        p.title {
-            margin: auto;
-            width: 75%;
-            color: white;
-            font-size: 3.5rem;
-            font-weight: bold;
-            text-align: center;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: #dfd8d8 !important;
+            width: 10px !important;
+            height: 10px !important;
+
+        }
+
+        a {
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+
+            p.title {
+                margin: auto;
+                width: 75%;
+                color: white;
+                font-size: 3.5rem;
+                font-weight: bold;
+                text-align: center;
+            }
+
         }
 
     }
 
+    span.swiper-pagination-bullet {
+        opacity: 0.6;
+
+    }
+
+    span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background: #dfd8d8 !important;
+
+    }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 992px) {
+    p.title {
+        font-size: 2.5rem !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .swiper-container {
+        height: 300px;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            padding: 2rem 1.3rem;
+
+        }
+
+        .swiper-button-prev {
+            left: 1rem;
+        }
+
+        .swiper-button-next {
+            right: 1rem;
+        }
+
+        p.title {
+            font-size: 1.5rem !important;
+            width: 60% !important;
+
+        }
+    }
 }
