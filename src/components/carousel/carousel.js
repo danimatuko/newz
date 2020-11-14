@@ -33,6 +33,8 @@ class Carousel extends Component {
     this.getTopHeadings();
   }
 
+  /* IMPORTANT: sometimes the API returns objects with empty fields */
+
   render() {
     return (
       <Swiper
@@ -45,7 +47,6 @@ class Carousel extends Component {
         }}
       >
         {this.state.topArticles
-          /* IMPORTANT: sometimes the API returns objects with empty fields */
           .filter(
             (article, index) =>
               article.description !== "0" &&

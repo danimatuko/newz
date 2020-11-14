@@ -25,6 +25,8 @@ class CategoryPreview extends Component {
     this.getTopHeadingsByCategory();
   }
 
+  /* IMPORTANT: sometimes the API returns objects with empty fields */
+
   render() {
     return (
       <div className="category-preview">
@@ -32,8 +34,7 @@ class CategoryPreview extends Component {
           <h2 style={{ textAlign: "right" }}>{this.props.hebrewName}</h2>
           <div className="row">
             {this.state.articles
-          /* IMPORTANT: sometimes the API returns objects with empty fields */
-          .filter(
+              .filter(
                 (article, index) =>
                   article.description !== "0" &&
                   article.description !== "" &&
