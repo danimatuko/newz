@@ -19,7 +19,7 @@ class Carousel extends Component {
 
   getTopHeadings = () => {
     fetch(
-      `http://newsapi.org/v2/top-headlines?country=il&apiKey=${process.env.REACT_APP_API_KEY}`
+      `https://newsapi.org/v2/top-headlines?country=il&apiKey=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
       .then((res) => res.articles)
