@@ -17,4 +17,3 @@ const CarouselItem = (props) => {
 
 export default CarouselItem;
 
-//https://lorempixel.com/800/400/food/2

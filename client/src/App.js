@@ -5,7 +5,10 @@ import Footer from "./components/footer/footer";
 import { Route, Switch } from "react-router-dom";
 import { Fragment } from "react";
 
-
+fetch("/users")
+  .then((res) => res.json())
+  .then((res) => console.log(res))
+  .catch((e) => "failed in fetch from express");
 
 function App() {
   return (
@@ -18,6 +21,5 @@ function App() {
     </Fragment>
   );
 }
-
 
 export default App;
