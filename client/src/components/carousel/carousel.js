@@ -47,7 +47,6 @@ class Carousel extends Component {
       >
         {this.state.topArticles
           /* IMPORTANT: sometimes the API returns objects with empty fields */
-
           .filter(
             (article, index) =>
               article.description !== "0" &&
@@ -58,9 +57,9 @@ class Carousel extends Component {
           .filter((article, index) => index < 4)
           .map(({ title, description, publishedAt, url, urlToImage }) => (
             <SwiperSlide key={publishedAt}>
-              <CarouselItem title={title} url={url} urlToImage={urlToImage} />{" "}
+              <CarouselItem title={title} url={url} urlToImage={urlToImage} />
             </SwiperSlide>
-          ))}{" "}
+          ))}
       </Swiper>
     );
   }

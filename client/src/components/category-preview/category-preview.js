@@ -10,14 +10,9 @@ class CategoryPreview extends Component {
   }
 
   getTopHeadingsByCategory = () => {
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=il&category=${this.props.categoryName}&apiKey=${process.env.REACT_APP_API_KEY}`
-    )
+    fetch(`/top-headings/?category=${this.props.categoryName}`)
       .then((res) => res.json())
-      .then((res) => res.articles)
-      .then((res) => {
-        this.setState({ articles: res });
-      })
+      .then((res) => this.setState({ articles: res }))
       .catch((err) => console.log("category-preview -> error in fetch", err));
   };
 
@@ -25,7 +20,6 @@ class CategoryPreview extends Component {
     this.getTopHeadingsByCategory();
   }
 
-  /* IMPORTANT: sometimes the API returns objects with empty fields */
 
   render() {
     return (
@@ -34,6 +28,7 @@ class CategoryPreview extends Component {
           <h2 style={{ textAlign: "right" }}>{this.props.hebrewName}</h2>
           <div className="row">
             {this.state.articles
+            /* IMPORTANT: sometimes the API returns objects with empty fields */
               .filter(
                 (article, index) =>
                   article.description !== "0" &&
