@@ -1,26 +1,26 @@
 const categoriesData = [
   {
-    id: 1,
+    categoryId: 1,
     categoryName: "business",
     hebrewName: "עסקים",
   },
   {
-    id: 2,
+    categoryId: 2,
     categoryName: "entertainment",
     hebrewName: "בידור",
   },
   {
-    id: 3,
+    categoryId: 3,
     categoryName: "health",
     hebrewName: "בריאות",
   },
   {
-    id: 4,
+    categoryId: 4,
     categoryName: "sports",
     hebrewName: "ספורט",
   },
   {
-    id: 5,
+    categoryId: 5,
     categoryName: "technology",
     hebrewName: "טכנולוגיה",
   },

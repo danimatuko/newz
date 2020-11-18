@@ -25,28 +25,28 @@ class Navigation extends Component {
                 <img src={Logo} alt="site logo" />
               </Link>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
-                {categoriesData.map(({ hebrewName }) => (
-                  <li>
-                    <Link className="blue-grey-text darken-4" to="sass.html">
+                {categoriesData.map(({ categoryId,categoryName,hebrewName }) => (
+                  <li key={categoryId}>
+                    <Link className="blue-grey-text darken-4" to={`/category=${categoryName}`}>
                       {hebrewName}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <ul class="sidenav right-align" id="slide-out">
+              <ul className="sidenav right-align" id="slide-out">
                 <Link to="/" className="brand-logo-mobile">
                   <img src={Logo} alt="site logo" />
                 </Link>
-                {categoriesData.map(({ hebrewName }) => (
-                  <li>
-                    <Link className="blue-grey-text darken-4" to="sass.html">
+                {categoriesData.map(({ categoryId,categoryName,hebrewName}) => (
+                  <li key={categoryId}>
+                    <Link className="blue-grey-text darken-4" to={`/category=${categoryName}`}>
                       {hebrewName}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <a href="#" data-target="slide-out" class="sidenav-trigger">
-                <i class="material-icons blue-grey-text darken-4">menu</i>
+              <a href="#" data-target="slide-out" className="sidenav-trigger">
+                <i className="material-icons blue-grey-text darken-4">menu</i>
               </a>
             </div>
           </div>

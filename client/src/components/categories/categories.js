@@ -9,8 +9,8 @@ export const Categories = () => {
 
   return (
     <div className="categories">
-      {categories.map(({ id, categoryName ,hebrewName}) => (
-        <CategoryPreview key={id} categoryName={categoryName} hebrewName={hebrewName}/>
+      {categories.map(({ categoryId, categoryName ,hebrewName}) => (
+        <CategoryPreview key={categoryId} categoryName={categoryName} hebrewName={hebrewName}/>
       ))}
     </div>
   );

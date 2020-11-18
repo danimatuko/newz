@@ -10,7 +10,7 @@ class CategoryPreview extends Component {
   }
 
   getTopHeadingsByCategory = () => {
-    fetch(`/top-headings/?category=${this.props.categoryName}`)
+    fetch(`/top-headings/category=${this.props.categoryName}`)
       .then((res) => res.json())
       .then((res) => this.setState({ articles: res }))
       .catch((err) => console.log("category-preview -> error in fetch", err));
