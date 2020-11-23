@@ -20,7 +20,5 @@
 
 #### Usage
 Run server: npm start  
-Run client: npm run  
-client  Run both server and client: npm run dev
-
-
+Run client: npm run client
+Run both server and client: npm run dev
