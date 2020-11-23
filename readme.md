@@ -3,6 +3,9 @@
 
 ![title](client/src/assets/images/newz-smartmockup.png =250x)
 
+<img src="client/src/assets/images/newz-smartmockup.png" width="250px"/>
+
+
 
 #### API Resource
 1. Go to https://newsapi.org/ and get an api key.
