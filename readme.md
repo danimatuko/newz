@@ -1,7 +1,7 @@
 # Newz
 ##### Get the latest news from Israel
 
-![title](client\src\assets\images\newz-smartmockup.png)
+![title](client/src/assets/images/newz-smartmockup.png)
 
 
 #### API Resource
