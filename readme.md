@@ -1,10 +1,10 @@
-#Newz
-#####Get the latest news from Israel
+# Newz
+##### Get the latest news from Israel
 
 ![title](client\src\assets\images\newz-smartmockup.png)
 
 
-####API Resource
+#### API Resource
 1. Go to https://newsapi.org/ and get an api key.
 2. In the root folder create .env file and write API_KEY= your api key.
 ```diff
@@ -12,11 +12,11 @@
 ```
 
 
-####Install dependencies
+#### Install dependencies
 1. npm install
 2. cd client npm install
 
-####Usage
+#### Usage
 Run server: npm start
 Run client: npm run client
 Run both server and client: npm run dev
