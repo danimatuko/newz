@@ -1,9 +1,8 @@
 # Newz
 ##### Get the latest news from Israel
 
-![title](client/src/assets/images/newz-smartmockup.png =250x)
 
-<img src="client/src/assets/images/newz-smartmockup.png" width="250px"/>
+<img src="client/src/assets/images/newz-smartmockup.png" width="500px"/>
 
 
 
